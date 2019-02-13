@@ -169,7 +169,7 @@ app.post('/acshapes/',verifyToken, (req, res) => {
       else{
     mongo.connect(url, function(err, db) { 
         if (err) throw err;
-        var db_api = db.db("");
+        var db_api = db.db("dump");//use database name that may be the mongorestored
         db_api.collection("loadgeojson").find({}).toArray(function(err, result) {
                 if (err) throw err;
                 res.json(result);
@@ -188,7 +188,7 @@ app.post('/entity/',verifyToken, (req, res) => {
       else{
     mongo.connect(url, function(err, db) {
         if (err) throw err;
-        var db_api = db.db("dump");
+        var db_api = db.db("dump");//use database name that may be the mongorestored
         //console.log(req.query)
 
           db_api.collection("entity").find({}).toArray(function(err, result) {
@@ -228,7 +228,7 @@ app.post('/connect',verifyToken, (req, res) => {
    mongo.connect(url, function(err, db) {
         if (err) throw err;
         console.log("database connected");
-        var db_api = db.db("dump");
+        var db_api = db.db("dump");//use database name that may be the mongorestored
         //console.log(req.query)
 
           db_api.collection("entity").find({}).toArray(function(err, result) {
@@ -259,7 +259,7 @@ app.post('/grid/',verifyToken, (req, res) => {
       else{
     mongo.connect(url, function(err, db) {
         if (err) throw err;
-        var db_api = db.db("dump");
+        var db_api = db.db("dump");//use database name that may be the mongorestored
         console.log(req.query)
 
 
@@ -287,7 +287,7 @@ app.post('/lines',verifyToken, (req, res) => {
       else{
     mongo.connect(url, function(err, db) {
         if (err) throw err;
-        var db_api = db.db("dump");
+        var db_api = db.db("dump");//use database name that may be the mongorestored
         //console.log(req.query)
 
 
@@ -315,7 +315,7 @@ app.post('/district',verifyToken, (req, res) => {
       else{
     mongo.connect(url, function(err, db) {
         if (err) throw err;
-        var db_api = db.db("dump");
+        var db_api = db.db("dump");//use database name that may be the mongorestored
         //console.log(req.query)
 
 
